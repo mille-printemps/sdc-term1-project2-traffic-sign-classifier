@@ -50,7 +50,7 @@ The code for this step is contained in the second code cell of the IPython noteb
 
 The code for this step is contained in the third code cell of the IPython notebook.  
 
-The code randomly selects an image from the training data and display it. 
+The code shows a histogram of the training, validation and test data for each traffic sign. 
 
 
 ###Design and Test a Model Architecture
@@ -119,9 +119,9 @@ The code for calculating the accuracy of the model is located in the sixth cell 
 
 My final model results were:
 
-* training set loss of 0.139
-* validation set accuracy of 0.926
-* test set accuracy of 0.923
+* training set loss of 0.144
+* validation set accuracy of 0.933
+* test set accuracy of 0.933
 
 The approach to find a solution was largely trial-and-error though LeNet model was chosen as a starting model. 
 
@@ -157,7 +157,7 @@ Here are the results of the prediction:
 | Priority road     	| Priority road	|
 | Yield					| Yield			|
 | General caution	    | General caution |
-| Slippery Road			| Right-of-way at the next intersection |
+| Slippery Road			| Traffic signals |
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This is an expected result considering the test accuracy is 0.923. 
 
@@ -165,53 +165,53 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 The code for making predictions on my final model is located in the 10th cell of the IPython notebook.
 
-For the first image, the model manages to identify this as a sign of right-of-way at the next intersection (probability of 0.27). 
+For the first image, the model manages to identify this as a sign of right-of-way at the next intersection (probability of 0.25). 
 
-| Probability      	| Prediction | 
-|------------------|---------------------------------------| 
-| .27         		| Right-of-way at the next intersection | 
-| .19     			| Beware of ice/snow |
-| .13				| Road work |
-| .11	      		| Double curve |
-| .11				| Slippery Road	|
+| Probability      	| Prediction |
+|------------------|---------------------------------------|
+| .25         		| Right-of-way at the next intersection |
+| .12     			| Beware of ice/snow |
+| .09				| Dangerous curve to the left |
+| .08	      		| Double curve |
+| .06				| Road narrows on the right	|
 
 
-For the second image, the model is relatively sure that this is a sign of priority road (probability of 0.35). 
+For the second image, the model manages to identify this as a sign of priority road (probability of 0.08).
 
-| Probability      	| Prediction | 
-|------------------|---------------------------------------| 
-| .35         		| Priority road | 
-| .14     			| Speed limit (60km/h) |
-| .09				| End of all speed and passing limits |
-| .09	      		| Vehicles over 3.5 metric tons prohibited |
-| .08				| Speed limit (120km/h)	|
+| Probability      	| Prediction |
+|------------------|---------------------------------------|
+| .08         		| Priority road |
+| .07     			| Speed limit (80km/h) |
+| .06				| Speed limit (100km/h) |
+| .03	      		| Speed limit (60km/h) |
+| .02				| Speed limit (120km/h)	|
 
-For the third image, the model is sure that this is a sign of yield (probability of 0.75). 
+For the third image, the model is sure that this is a sign of yield (probability of 1).
 
-| Probability      	| Prediction | 
-|------------------|---------------------------------------| 
-| .75         		| Yield | 
-| .29     			| Priority road |
-| .20				| Roundabout mandatory |
-| .16	      		| Turn left ahead |
-| .16				| Children crossing	|
+| Probability      	| Prediction |
+|------------------|---------------------------------------|
+| 1.         		| Yield |
+| .39    			| Speed limit (30km/h) |
+| .34				| Ahead only |
+| .33	      		| Keep left |
+| .29				| Speed limit (50km/h)|
 
-For the forth image, the model manages to identify this as a sign of general caution (probability of 0.25). 
+For the forth image, the model is relatively sure that this is a sign of general caution (probability of 0.63).
 
-| Probability      	| Prediction | 
-|------------------|---------------------------------------| 
-| .25         		| General caution | 
-| .20     			| Traffic signals |
-| .19				| Right-of-way at the next intersection |
-| .14	      		| Road work |
-| .07				| Roundabout mandatory	|
+| Probability      	| Prediction |
+|------------------|---------------------------------------|
+| .63         		| General caution |
+| .48     			| Traffic signals |
+| .41				| Pedestrians |
+| .24	      		| Road narrows on the right |
+| .23				| Right-of-way at the next intersection|
 
-For the fifth image, the model fails to identify this sign. The sign is for slippery road. However, the model says that it is a sign of right-of-way at the next intersection (probability of 0.19). The probability is low even for the top one. This would indicate that the test image did not fit the training set or the learned model is still overfitting. 
+For the fifth image, the model fails to identify this sign. This sign is for slippery road. However, the model says that it is a sign of traffic signals (probability of 0.18). The probability is low even for the top one. This would indicate that the test image did not fit the training set or the learned model is still overfitting.
 
-| Probability      	| Prediction | 
-|------------------|---------------------------------------| 
-| .19         		| Right-of-way at the next intersection | 
-| .11     			| Beware of ice/snow |
-| .08				| General caution |
-| .06	      		| Road work |
-| .05				| Roundabout mandatory	|
+| Probability      	| Prediction |
+|------------------|---------------------------------------|
+| .18         		| Traffic signals |
+| .17     			| Right-of-way at the next intersection |
+| .17				| Pedestrians |
+| .16	      		| General caution |
+| .13				| Road narrows on the right	|
